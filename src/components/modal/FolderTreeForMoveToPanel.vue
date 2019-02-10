@@ -2,21 +2,21 @@
     <li v-if="isFolder">
         <div>
             <span class="move-to-panel-collapse-arrow" @click="open = !open"><i class="fa" :class="[{ 'fa-caret-right': !open }, {'fa-caret-down':open}]"></i></span>
-            <span class="move-to-panel-check-box" @click="selectedMe" v-bind:class="{adjustment:!hasSubFolder}">
+            <span class="move-to-panel-check-box" @click="selectedMe">
                 <span class="move-to-panel-check-box-tiny" :class="{ 'move-to-panel-check-box-tiny-checked':checkedState.styler[treeNode.id] }"></span>
             </span>
             <span class="move-to-panel-down-item-name ellipsis" @click="selectedMe">{{treeNode.name }}</span>
             <span class="move-to-panel-children-num" >{{childrenNum}}</span>
         </div>
         <ul v-show="open" class="move-to-panel-children">
-            <folder-tree
+            <folder-tree-for-move-to-panel
                     v-for="(child, index) in treeNode.children"
                     :key="index"
                     :treeNode="child"
                     :parent="treeNode"
                     :checkedState="checkedState"
             >
-            </folder-tree>
+            </folder-tree-for-move-to-panel>
         </ul>
     </li>
 </template>
@@ -24,7 +24,7 @@
 <script>
     import Utils from "../../utils/Utils"
     export default {
-        name: "FolderTree",
+        name: "FolderTreeForMoveToPanel",
         data: function () {
             return {
                 open: false,
@@ -42,11 +42,6 @@
         computed: {
             isFolder() {
                 return Utils.isArrayFn(this.treeNode.children);
-            },
-            hasSubFolder(){
-                return this.treeNode.children.some(function (child) {
-                    return child.children && child.children.length > 0;
-                });
             },
             childrenNum(){
                 return this.treeNode.children.length;
