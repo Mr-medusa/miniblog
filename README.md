@@ -4,6 +4,16 @@
 
 ### https://mr-medusa.github.io/miniblog/
 
+#
+#
+
+离线版：
+
+### https://github.com/Mr-medusa/miniblog_indexdb
+
+#
+#
+
 ## Project setup
 ```
 npm install
