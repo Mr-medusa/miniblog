@@ -116,7 +116,7 @@
                 this.readOrEdit.isReadable = this.$route.params.isReadable;
                 this.readOrEdit.isEditable = !this.readOrEdit.isReadable;
                 var id = this.$route.params.id;
-                if(id >= 0){
+                if(parseInt(id) >= 0){
                     var blog = this.getBlogById(id);
                     this.readOrEdit.blog = blog;
                 }

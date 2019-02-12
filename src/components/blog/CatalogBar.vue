@@ -113,6 +113,7 @@
                 }
                 if(this.blog.blogTags && this.blog.blogTags.trim()){
                     blogTags = this.blog.blogTags.trim().split(" ");
+                    blogTags = Utils.removeDuplicate(blogTags);
                     for (let i = 0; i < blogTags.length; i++) {
                         if(!blogTags[i].trim())
                             blogTags.splice(i,1);

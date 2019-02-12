@@ -78,9 +78,6 @@
                 myHtmlContent:null,
             }
         },
-        computed:{
-
-        },
         methods:{
             clickBlogEditor(){
                 if(!this.blogEditor.hasFocus()){
@@ -109,6 +106,7 @@
                 if(this.tags && this.tags.trim()){
                     this.readOrEdit.blog.tags = [];
                     var tags = this.tags.trim().split(" ");
+                    tags = Utils.removeDuplicate(tags);
                     for (let i = 0; i < tags.length; i++) {
                         if(tags[i].trim()){
                             EventHub.putBlogTag(tags[i]);
@@ -116,6 +114,7 @@
                         }
                     }
                 }
+                this.readOrEdit.blog.tags = Utils.removeDuplicate(this.readOrEdit.blog.tags);
                 this.oldTags = this.readOrEdit.blog.tags;
                 EventHub.makeBlogTags();
                 EventHub.$emit("goTip",["保存成功!"]);
@@ -147,6 +146,10 @@
         },
         watch:{
             'readOrEdit.blog.id':function () {
+                this.oldTags = this.readOrEdit.blog.tags;
+                if(this.readOrEdit.blog.tags && this.readOrEdit.blog.tags.length){
+                    this.tags = this.readOrEdit.blog.tags.join(" ");
+                }
                 if(this.blogEditor){
                     this.blogEditor.setText("");
                     this.blogEditor.enable();

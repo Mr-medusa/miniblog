@@ -27,6 +27,11 @@ export default {
                 fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
     },
+    removeDuplicate:function(strArr){
+        return strArr.filter(function(element,index,self){
+            return self.indexOf(element) === index;
+        });
+    },
     debounce: function (fn, delay) {
         var delay = delay || 200;
         var timer;
