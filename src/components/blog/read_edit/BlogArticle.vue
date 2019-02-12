@@ -96,10 +96,9 @@
                     if(blogs[i].id === id){
                         if(Utils.isArrayFn(blogs[i].tags)){
                             for (let j = 0; j < blogs[i].tags.length; j++) {
-                                var tagPos = EventHub.blogTags.indexOf(blogs[i].tags[j]);
-                                if(tagPos >= 0)
-                                    EventHub.blogTags.splice(tagPos,1);
+                                 EventHub.putBlogTag(blogs[i].tags[j],false);
                             }
+                            EventHub.makeBlogTags();
                         }
                         blogs.splice(i,1);
                     }

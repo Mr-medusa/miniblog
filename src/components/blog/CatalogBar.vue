@@ -89,6 +89,8 @@
         mounted(){
             Utils.makeScrollBar("#catalog-barrier-tags",{scrollInertia: 300, deltaFactor: 100, axis: "y"});
             Utils.makeScrollBar("#my-catalog-scroll",{scrollInertia: 300, deltaFactor: 100, axis: "y"});
+
+            EventHub.makeBlogTags();
         },
         methods:{
             createBlogAlert() {
@@ -112,11 +114,13 @@
                 if(this.blog.blogTags && this.blog.blogTags.trim()){
                     blogTags = this.blog.blogTags.trim().split(" ");
                     for (let i = 0; i < blogTags.length; i++) {
-                        if(EventHub.blogTags.indexOf(blogTags[i].trim()) < 0 && blogTags[i].trim()!=''){
-                            EventHub.blogTags.push(blogTags[i].trim());
-                        }
+                        if(!blogTags[i].trim())
+                            blogTags.splice(i,1);
+                        EventHub.putBlogTag(blogTags[i]);
                     }
+                    EventHub.makeBlogTags();
                 }
+
                 var newBlog = {
                     id: EventHub.blogs.length,
                     title:blogName,

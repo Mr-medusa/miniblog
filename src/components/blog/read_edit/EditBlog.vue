@@ -70,6 +70,7 @@
                 blogEditor:null,
                 tags:null,
                 tagsArr:this.readOrEdit.blog.tags,
+                oldTags:this.readOrEdit.blog.tags,
 
                 isEditTags:false,
                 isEditAuthor:false,
@@ -100,24 +101,23 @@
                     this.readOrEdit.blog.previewContent += "...";
                 }
 
-                if(this.tags && this.tags.trim()){
-                    if(Utils.isArrayFn(this.readOrEdit.blog.tags)){
-                        var delBlogTags = this.readOrEdit.blog.tags;
-                        for (let i = 0; i < delBlogTags.length; i++) {
-                            var tagPos = EventHub.blogTags.indexOf(delBlogTags[i]);
-                            if(tagPos > 0)
-                                EventHub.blogTags.splice(tagPos,1);
-                        }
+                if(this.oldTags){
+                    for (let i = 0; i < this.oldTags.length; i++) {
+                        EventHub.putBlogTag(this.oldTags[i],false);
                     }
+                }
+                if(this.tags && this.tags.trim()){
                     this.readOrEdit.blog.tags = [];
                     var tags = this.tags.trim().split(" ");
                     for (let i = 0; i < tags.length; i++) {
-                        if(tags[i].trim() != ''){
-                            EventHub.blogTags.push(tags[i].trim());
+                        if(tags[i].trim()){
+                            EventHub.putBlogTag(tags[i]);
                             this.readOrEdit.blog.tags.push(tags[i].trim())
                         }
                     }
                 }
+                this.oldTags = this.readOrEdit.blog.tags;
+                EventHub.makeBlogTags();
                 EventHub.$emit("goTip",["保存成功!"]);
             },
             myEidtorBinds(){

@@ -57,7 +57,8 @@ var EventHub = new Vue({
 
         /*blogs*/
         blogs: Data.blogs,
-        blogTags: ["安徒生", "童话", "诗集", "小说", "短篇", "音乐"],
+        blogTags: [],
+        blogTagMap:new Map(),
         pageInfo: {
             total: Data.blogs.length,
             current: 1,
@@ -67,6 +68,13 @@ var EventHub = new Vue({
     },
     created() {
         this.defaultFolder = this.getDefaultFolder();
+
+        this.blogTagMap.set("安徒生",1);
+        this.blogTagMap.set("童话",1);
+        this.blogTagMap.set("诗集",1);
+        this.blogTagMap.set("小说",1);
+        this.blogTagMap.set("短篇",1);
+        this.blogTagMap.set("音乐",1);
     },
     methods: {
         getPadParent(child) {
@@ -203,6 +211,21 @@ var EventHub = new Vue({
                     break;
             }
             return mode;
+        },
+        putBlogTag(tag, isAdd = true) {
+            tag = tag.trim();
+            if (tag) {
+                var count = this.blogTagMap.get(tag) || 0;
+                count = isAdd ? count + 1 : count - 1;
+                if (!isAdd && count === 0)
+                    this.blogTagMap.delete(tag);
+                else
+                    this.blogTagMap.set(tag, count);
+            }
+        },
+        makeBlogTags() {
+            this.blogTags.splice(0, this.blogTags.length);
+            this.blogTags.push(...this.blogTagMap.keys());
         },
     },
 });
