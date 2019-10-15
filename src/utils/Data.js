@@ -204,7 +204,7 @@ export default {
             id: 2,
             title: "Async Function",
             author: null,
-            tags: ["JavaScript","ES6"],
+            tags: ["JavaScript","ES8"],
             previewContent: 'async function 用来定义一个返回 AsyncFunction 对象的异步函数。异步函数是指通过事件循环异步执行的函数，它会通过一个隐式的 Promise 返回其结果。如果你在代码中使用了异步函数，就会发现它的语法和结构会更像是标准的同步函数。你还可以使用 异步函数表达式 来定义异步函数。',
             htmlContent: '<h2>Async Function</h2><p><br></p><p><code style="background-color: rgba(220, 220, 220, 0.5);"><strong>async function</strong></code>&nbsp;用来定义一个返回&nbsp;<code style="color: rgb(61, 126, 154); background-color: rgba(220, 220, 220, 0.5);"><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/AsyncFunction" target="_blank">AsyncFunction</a></code>&nbsp;对象的异步函数。异步函数是指通过事件循环异步执行的函数，它会通过一个隐式的&nbsp;<code style="color: rgb(61, 126, 154); background-color: rgba(220, 220, 220, 0.5);"><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise</a></code>&nbsp;返回其结果。如果你在代码中使用了异步函数，就会发现它的语法和结构会更像是标准的同步函数。你还可以使用&nbsp;<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/async_function" target="_blank" style="color: rgb(153, 0, 0);">异步函数表达式</a>&nbsp;来定义异步函数。</p><p><br></p><p><br></p><h3><span style="color: rgb(255, 255, 255);">Demo</span></h3><p><br></p><pre class="ql-syntax" spellcheck="false">function resolveAfter2Seconds() {\n' +
             '&nbsp;return new Promise(resolve =&gt; {\n' +

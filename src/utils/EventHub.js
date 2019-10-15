@@ -69,7 +69,7 @@ var EventHub = new Vue({
     created() {
         this.defaultFolder = this.getDefaultFolder();
         this.blogTagMap.set("JavaScript",2);
-        this.blogTagMap.set("ES6",2);
+        this.blogTagMap.set("ES6",1);
     },
     methods: {
         getPadParent(child) {
