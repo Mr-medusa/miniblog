@@ -1,4 +1,6 @@
 export default {
+    //默认路由
+    defaultView:'/pads',
     /*目录颜色*/
     colors: [
         '#2dd5eb',

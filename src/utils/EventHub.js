@@ -68,13 +68,9 @@ var EventHub = new Vue({
     },
     created() {
         this.defaultFolder = this.getDefaultFolder();
-
-        this.blogTagMap.set("安徒生",1);
-        this.blogTagMap.set("童话",1);
+        this.blogTagMap.set("JavaScript",1);
+        this.blogTagMap.set("ES6",1);
         this.blogTagMap.set("诗集",1);
-        this.blogTagMap.set("小说",1);
-        this.blogTagMap.set("短篇",1);
-        this.blogTagMap.set("音乐",1);
     },
     methods: {
         getPadParent(child) {
