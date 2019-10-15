@@ -199,18 +199,6 @@ export default {
             date: new Date().toLocaleDateString(),
             updateTime: new Date().toLocaleDateString(),
             isShowBanner: true,
-        },
-        {
-            id: 2,
-            title: "衰落",
-            author: '查尔斯·布可夫斯基',
-            tags: ["诗集"],
-            previewContent: '早上八点，我在房子旁边赤身裸体，往身上涂芝麻油，耶稣啊，我已经到了这步田地吗？我一度在黑巷中战斗，只为开怀一笑。现在我不笑了。我把油和惊讶泼到自己身上，你想要多少年？多少天？我的血液已被玷污，一只黑天使坐在我的脑中。事情总是这样，源于某物而归于虚无。我理解城市的陷落，国家的陷落。一架小飞机从头上飞过。我抬头张望，仿佛这种张望真的有什么意义。没错，天空开始腐烂：时日无多了，对我们每个人来说，都是如此。',
-            textContent: "",
-            htmlContent: '<p class="ql-align-center">早上八点，</p><p class="ql-align-center">我在房子旁边赤身裸体，</p><p class="ql-align-center">往身上涂芝麻油，</p><p class="ql-align-center">耶稣啊，我已经到了这步田地吗？</p><p class="ql-align-center">我一度在黑巷中战斗，</p><p class="ql-align-center">只为开怀一笑。</p><p class="ql-align-center">现在我不笑了。</p><p class="ql-align-center">我把油和惊讶泼到自己身上，</p><p class="ql-align-center">你想要多少年？</p><p class="ql-align-center">多少天？</p><p class="ql-align-center">我的血液已被玷污，</p><p class="ql-align-center">一只黑天使坐在我的脑中。</p><p class="ql-align-center">事情总是这样，</p><p class="ql-align-center">源于某物而归于虚无。</p><p class="ql-align-center">我理解城市的陷落，</p><p class="ql-align-center">国家的陷落。</p><p class="ql-align-center">一架小飞机从头上飞过。</p><p class="ql-align-center">我抬头张望，仿佛这种张望</p><p class="ql-align-center">真的有什么意义。</p><p class="ql-align-center">没错，天空开始腐烂：</p><p class="ql-align-center">时日无多了，对我们每个人来说，</p><p class="ql-align-center">都是如此。</p><p class="ql-align-center"><br></p><p class="ql-align-center"><br></p><p class="ql-align-center"><br></p><p class="ql-align-center"><br></p><p class="ql-align-center"><br></p>',
-            date: new Date().toLocaleDateString(),
-            updateTime: new Date().toLocaleDateString(),
-            isShowBanner: true,
-        },
+        }
     ],
 }

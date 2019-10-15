@@ -70,7 +70,6 @@ var EventHub = new Vue({
         this.defaultFolder = this.getDefaultFolder();
         this.blogTagMap.set("JavaScript",1);
         this.blogTagMap.set("ES6",1);
-        this.blogTagMap.set("诗集",1);
     },
     methods: {
         getPadParent(child) {
