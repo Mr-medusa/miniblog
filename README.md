@@ -1,25 +1,14 @@
 # MiniBlog
 
 一ge简单的博客。 用于所见即所得的日志记录,在线代码编辑。
+https://mr-medusa.github.io/miniblog/
 
-### https://mr-medusa.github.io/miniblog/
+# IndexDB 离线版：
+https://github.com/Mr-medusa/miniblog_indexdb
 
-#
-#
-
-## IndexDB 离线版：
-
-### https://github.com/Mr-medusa/miniblog_indexdb
-
-#
-#
-
-#
-## MongDB 版：
-
-### https://github.com/Mr-medusa/miniblog_mongo
-#
-#   
+# MongDB 版：
+https://github.com/Mr-medusa/miniblog_mongo
+ 
 
 ## Project setup
 ```
@@ -35,16 +24,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
